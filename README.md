@@ -104,7 +104,7 @@ Again if the subscription is properly setup, the user will see the updated statu
 
 This will show;
 - The image of the receipt
-- The status along with all the data captured from the [receipt processor](#Receipt processor)
+- The status along with all the data captured from the [receipt processor](#receipt-processor)
 
 There should be an edit button, which will convert all pieces of information previously read only to be editable.
 The user should be allowed to save and update the document for mistakes made by the AI.
