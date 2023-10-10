@@ -37,6 +37,10 @@ You will be using Zustand to manage local state within the app (i.e. authenticat
 ### Tailwind
 You will be using tailwind for themeing. Where possible avoid custom CSS.
 
+### Heroku
+You will use Heroku to host your application, NOT vercel.
+Vercel serves your app as serverless functions. This means, after a request is completed, the instance it closed. This will not allow for websockets and graphql subscriptions.
+
 ## Requirements
 
 ### Login
