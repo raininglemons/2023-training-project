@@ -37,6 +37,8 @@ You will be using Zustand to manage local state within the app (i.e. authenticat
 ### Tailwind
 You will be using tailwind for themeing. Where possible avoid custom CSS.
 
+## Requirements
+
 ### Login
 
 There will be a simple login / registration flow.
@@ -48,7 +50,7 @@ There will be a simple login / registration flow.
 - When the user clicks register,
   - Ask for an email and name, then send them an email with a "magic link" that will login them in on the site with a token.
  
-## Homepage
+### Homepage
 
 There will be a simple UI with a table that lists receipts they've previously uploaded.
 On each row include;
@@ -64,6 +66,6 @@ After initial loading, SUBSCRIBE to the query to dynamically update the table wh
 
 There will be a single CTA "Upload Receipt". This will open the Receipt upload screen
 
-## Receipt upload screen
+### Receipt upload screen
 
 ## Technologies
