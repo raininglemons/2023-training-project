@@ -72,4 +72,39 @@ There will be a single CTA "Upload Receipt". This will open the Receipt upload s
 
 ### Receipt upload screen
 
-## Technologies
+Prompt the user for an receipt to upload.
+When they have confirmed the image is valid then;
+- Store the image (for now just use mongo as a storage mechanism via [gridfs](https://www.mongodb.com/docs/manual/core/gridfs/))
+- Create a new entry in your database
+- Close the modal
+
+If the subscription is properly setup, the user will see the new document on the homepage with the status "Processing"
+
+### Receipt processor
+
+This will be an async processor of newly upload receipts.
+It will only process one job at a time.
+It will take a receipt image then;
+- submit it to GPT4 and request it analyzes the document and returns a JSON response structured to include;
+ - Receipt Date
+ - Receipt vendor / supplier
+ - Receipt amount
+ - Receipt line items [for each capture the name of the product/service, the quantity and the subtotal of the line item)
+ - The sub total for the reciept
+ - The tax applied to the subtotal
+ - The total amount paid
+ - [BONUS] which payment method was used to pay for the purchase
+- Store this returned data to the database, then set the record to processed
+
+Again if the subscription is properly setup, the user will see the updated status on the document.
+
+[BONUS] trigger a toaster like message that on click takes them to the receipt preview page
+
+### Receipt preview page
+
+This will show;
+- The image of the receipt
+- The status along with all the data captured from the [receipt processor](#Receipt processor)
+
+There should be an edit button, which will convert all pieces of information previously read only to be editable.
+The user should be allowed to save and update the document for mistakes made by the AI.
